@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+   nodejs:
+     build: .
+     restart: always
+     depends_on:
+       - mongodb
+       - redis
+     links:
+       - mongodb
+       - redis
+
+   mongodb:
+     image: mongo
+     restart: always
+     volumes:
+       - ./mongodb:/data/db
+     ports:
+       - "27017:27017"
+
+   redis:
+     image: redis
+     restart: always
+     expose:
+      - "6379"
+
+volumes:
+    db_data:
