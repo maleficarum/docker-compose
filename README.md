@@ -22,7 +22,10 @@ sudo /usr/local/bin/docker-compose up
 > docker login
 > docker push maleficarum/dc-nodejs-server:latest
 ```
-
-> - push an image to a dokerhub
-
 > - run on docker swarm
+
+```bash
+> eval $(docker-machine env my-swarm-manager)
+> docker service create --name nodejs --replicas 2 --publish 3000:3000 maleficarum/dc-nodejs-server
+> docker service ps nodejs
+```
