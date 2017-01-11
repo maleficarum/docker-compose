@@ -26,6 +26,7 @@ sudo /usr/local/bin/docker-compose up
 
 ```bash
 > eval $(docker-machine env my-swarm-manager)
-> docker service create --name nodejs --replicas 2 --publish 3000:3000 maleficarum/dc-nodejs-server
+> docker service create --name nodejs --mode global --publish 3000:3000 maleficarum/dc-nodejs-server
+> docker service create --name mongodb --replicas 1 --publish 3000:3000 maleficarum/dc-mongodb-server
 > docker service ps nodejs
 ```
