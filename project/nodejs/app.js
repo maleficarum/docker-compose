@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
+var os = require('os');
 var MongoClient = require('mongodb').MongoClient;
+var hostname = os.hostname();
 
 MongoClient.connect("mongodb://mongodb:27017/docker", function(err, _db_) {
       if(err) {
@@ -12,7 +14,7 @@ MongoClient.connect("mongodb://mongodb:27017/docker", function(err, _db_) {
 
 
 app.get('/', function (req, res) {
-  res.send('Hello World!')
+  res.send('Maleficarum says hello from node ' + hostname);
 })
 
 app.listen(3000, function () {
