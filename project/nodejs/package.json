@@ -8,8 +8,10 @@
     "start": "node /nodejs/app.js"
   },
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.13.3",
     "mongodb": "^2.1.7",
-    "mongodb-core": "^1.2.19"
+    "mongodb-core": "^1.2.19",
+    "mongoose": "^4.7.6"
   }
 }
